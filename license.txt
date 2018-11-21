@@ -1,0 +1,24 @@
+git push -u origin master //推送远程库的内容
+git clone     //克隆远程库的内容
+git branch dev  //创建一个dev分支
+git checkout dev    //head指向当前分支
+git checkout -b dev  //上两步合成一步，直接创建并指向
+git branch   //查看当前分支
+git branch master  //切换成master分支
+git merge dev  //将指定的dev分支合并到当前master分支
+git branch -d dev  //删除dev分支
+
+
+创建分支后修改提交，同时在master上也修改提交。那么合并的时候会产生冲突，需手动解决。
+git log --graph --pretty=oneline --abbrev-commit //查看分支合并图
+   
+ 当出现bug时创建分支，把当前工作储藏
+ 思路：git stash  //先储藏当前分支的当前工作
+       切换回master分支，并在此分支上创建一个新的分支来解决bug
+	   解决了bug之后在master上合并bug分支和删除
+	   切换成储藏了工作的分支
+	   git stash apply //恢复工作
+	   git stash drop  //删除stash内容
+	   git stash pop   //恢复的同时删除stash内容，相当于前两步
+ 
+

@@ -1,0 +1,25 @@
+已经提交到工作区的版本回退
+git reset --hard HEAD^  //回退到前一版本
+git reset --hard HEAD^^ //回退到上上版本
+git reset --hard HEAD~100  //回退到前100个版本
+
+git log --pretty=oneline  //显示所有已提交的版本号
+git reset --hard 版本号   //直接回退到该版本
+
+在工作区进行撤销
+git checkout -- hh.txt   //一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+                         //一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+						  
+
+在修改之后放在了暂存区进行撤销
+git reset HEAD hh.txt   //暂存区回到工作区
+git checkout -- hh.txt  //丢弃工作区的修改
+
+
+
+git log  //显示所有的已提交信息
+git reflog //记录了所有的命令，有版本号
+git status //查看目前暂存区的状态
+cat hh.txt //读取
+
+？？？？已经提交后rm删除，再用git checkout --找不回删去的文件？？？？
